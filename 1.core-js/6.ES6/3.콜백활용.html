@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const userList = [
+        {
+          account: "abc1234",
+          userName: "대길이",
+          job: "추노",
+          address: "서울",
+          hobbies: ["수영", "축구", "테니스"],
+        },
+        {
+          account: "banana",
+          userName: "빠나나",
+          job: "과일",
+          address: "서울",
+          hobbies: ["푸드파이팅", "테니스"],
+        },
+        {
+          account: "park1234",
+          userName: "주차왕",
+          job: "발렛파킹",
+          address: "경기",
+          hobbies: ["족구", "축구", "테니스", "영화감상"],
+        },
+        {
+          account: "fire",
+          userName: "불꽃남자카리스마",
+          job: "게이머",
+          address: "서울",
+          hobbies: ["독서", "테니스"],
+        },
+      ];
+
+      // 회원 정보 중에 취미가 딱 2개인 사람들만 추출해서 필터링 해줘
+      function filter2Hobby(){
+        const filterArray = [];
+        for(let user of userList){
+          if(user.hobbies.length == 2){
+            filterArray.push(user);
+          }
+      
+        }
+        return filterArray;
+      }
+
+      const result= filter2Hobby();
+      console.log(result);
+
+      // 콜백을 이용한 배열 필터링 함수
+      function filter(callback) {
+        const filteredArray = [];
+
+        for(let user of userList){
+          if(callback(user)) filteredArray.push(user);
+        }
+        //서울 사는 사람 필터 해줘
+        return filteredArray;
+      }
+      
+      //서울 사는 사람 필터 해줘
+      filter(
+       function(user) {
+        if(user.address === '서울') {
+         return true;
+        }
+        return false;
+       }
+      );
+
+      const result2 = filter((user) => user.address === '서울');
+      console.log(result2);
+
+      // 서울살면서 직업이 게이머인 사람
+      const result3 = filter((user) => user.address === '서울' && user.job==='게이머');
+      console.log(result3);
+    
+
+    </script>
+  </body>
+</html>
