@@ -28,11 +28,13 @@
       // querySelectAll이 가져오는 데이터 묶음은 
       // 배열이 아닌 유사배열객체 이기 때문에, 배열문법이 안먹는다.
       // 유사배열을 실제 배열로 바꿔서 쓰는 것을 추천함.
+      // getElementsByTagName, ClassName 등도 유사배열임. 순수 배열로 바꿔서 사용하기.
       const $allItem = document.querySelectorAll('.f-item');
       console.log($allItem);
       
       // $allItem.pop(); (x 안됨)
 
+    
       // 유사배열을 순수 배열로 바꾸자
       const $fruitsArr = [...$allItem];
       $fruitsArr.pop().textContent = '오우렌쥐~';
