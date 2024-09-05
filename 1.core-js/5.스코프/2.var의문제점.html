@@ -21,15 +21,18 @@
     console.log(`x: ${x}`);
 
     //2. 블록레벨 스코프를 지원하지 않음.
-    // let i = '메롱';
-    // for(let i = 0; i < 10; i++){
-    //   console.log(`for - i: ${i}`);
-    // }
-    // console.log(`global - i: ${i}`);
-    // if(true){
-    //   let nam = '홍길동';
-    // }
-    // console.log(nam);
+    let i = '메롱';
+    for(let i = 0; i < 10; i++){
+      console.log(`for - i: ${i}`);
+    }
+    console.log(`global - i: ${i}`);
+    if(true){
+      let nam = '홍길동';
+    }
+    console.log(nam);
+
+    // console.log(window.name);
+    
 
     /*
       3. 변수 호이스팅
