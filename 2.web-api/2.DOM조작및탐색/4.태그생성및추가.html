@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="fruits">
+      <li>사과</li>
+      
+    </ul>
+
+    <script>
+
+      // 태그이름과 텍스트를 전달받으면 태그를 생성하는 함수
+      // tagName='div': 파라미터가 비어 없으면 div로 세팅,default값 세팅
+      // option = {} : {}은 객체를 의미함. option 객체.
+      function makeNewTag(tagName='div', option = {}){
+
+        const $newTag = document.createElement(tagName);
+
+        if (option.text) $newTag.textContent = option.text;
+
+        console.log($newTag);
+        
+        return $newTag;
+      }
+
+      //태그를 추가하는 함수
+      function append($parent, tagName, option) {
+        
+        $parent.appendChild(makeNewTag(tagName, option));
+        
+      };
+
+      // const $ul = document.getElementsById('fruits');
+      const $ul = document.getElementById('fruits');
+
+      console.log($ul);
+      
+
+      append($ul, li, {text: '바나나'});
+
+      append($ul, 'li', {text: '망고'});
+      append($ul, 'li', {text: '오렌쥐'});
+      append($ul, 'li', {text: '수박'});
+
+      // 결과 안나옴. Check 하세요~~~~ !!!!
+      // 수정했음. getElementsByName으로 잘못 호출함. getElementById로 호출해야함.
+
+
+
+
+      /*
+      // 태그(요서 노드) 생성: <li></li>
+      const $newLi = document.createElement("li");
+
+      //텟스트 추가하기 <li>바나나</li>
+      $newLi.textContent = "바나나";
+
+      // ul에 자식노드를 붙이자.
+      document.getElementById("fruits").appendChild($newLi); // 맨 마지막 자식으로 붙인다.
+      */
+
+    </script>
+  </body>
+</html>
