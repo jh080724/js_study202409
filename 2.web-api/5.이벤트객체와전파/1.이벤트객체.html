@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>아무곳이나 클릭하세요~</p>
+    <span class="msg"></span>
+
+    <input type="checkbox" />
+
+    <input type="text" id="input-text" />
+
+    <p id="msg"></p>
+
+    <script>
+      // document.addEventListener("click", (e) => {   //--> 안된다. 확인하자. <=== 확인함. querySelector는 class 입력시 점(.,예: .msg)을 입력해야함.
+      //   console.log("클릭 이벤트 발생!");
+      //   console.log(e);
+      //   document.querySelector('.msg').textContent = `X좌표: ${e.offsetX}, Y죄표: ${e.offsetY}`;
+        // document.querySelector('.msg').textContent = "dfnaslfjlsdajfl";
+      // });
+
+      // const $checkbox = document.querySelector("input[type=checkbox]");
+      // $checkbox.addEventListener("change", (e) => {  // --> 안된다. 확인하자. <=== (e)가 꼭 들어가야함.)
+      //   // 이벤트가 발생한 요소 -> 이벤트가 발생된 요소가 누구인지
+      //   console.log(e.target);
+
+      //   // 체크박스 or radio 버튼의 체크유무를 확인하는 프로퍼티
+      //   if (e.target.checked) {
+      //     document.querySelector(".msg").textContent = "체크됨";
+      //   } else {
+      //     document.querySelector(".msg").textContent = "체크안됨";
+      //   }
+      // });
+
+      //////////////////////////////////////
+      const $input = document.getElementById("input-text");
+      const $msg = document.getElementById("msg");
+
+      $input.addEventListener("keyup", (e) => {
+        console.log('keyup 이벤트 발생');
+        console.log(`입력한 값: ${e.target.value}`);
+        console.log(e.keyCode);
+        
+        if(e.keyCode == 13){  //keyup 한 자판이 enter ?
+          $msg.textContent = e.target.value; 
+
+          e.target.value = '';
+        } 
+        // keyCode 27 ESC 일때 동작 코드도 넣어 보자.
+      });
+
+    </script>
+  </body>
+</html>
