@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">버튼입니다.</button>
+
+  <script>
+
+const $btn = document.getElementById('btn');
+
+//이벤트핸들러
+const helloHandler = () => alert('안뇽~~~');
+
+//addEventListener('이벤트타입', 핸들러 -> 콜백)  콜백(매개변수로 함수 전달)
+//한 요소에 이벤트 여러개 등록 가능.
+$btn.addEventListener('click', helloHandler);
+
+$btn.addEventListener('click', function(){
+  alert('응 안녕~~~~');
+});
+
+// 기존 핸들러를 지우고 싶을 때는 수동으로 지워야함.
+// 수동으로 지울때는 반드시 핸들러가 이름이 있는 함수여야 함.
+$btn.removeEventListener('click', helloHandler);
+
+$btn.addEventListener('click', () => {
+
+  $btn.style.background='aqua';
+});
+
+
+
+  </script>
+</body>
+</html>
