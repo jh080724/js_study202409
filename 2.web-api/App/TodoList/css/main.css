@@ -1,0 +1,94 @@
+.wrapper {
+    background: #e9ecef;
+    width: 400px;
+    padding-top: 64px;
+    height: 100vh;
+    /*
+  border: 2px double #22b7ce;
+  margin: 50px auto;
+  border-radius: 8px;
+  */
+}
+
+section.todo-template {
+    background: tomato;
+    width: 512px;
+    border-radius: 5px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+section.todo-template .app-title {
+    height: 64px;
+    font-size: 1.5em;
+    background: #22b8cf;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+    /* font-weight: bold;
+    text-align: center;
+    background: #22b7ce;
+    padding: 20px; */
+}
+
+section.todo-template .content .todo-insert {
+    display: flex;
+    background: #495057;
+}
+
+section.todo-template .content .todo-insert input {
+  flex: 1;
+  padding: 8px;
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: white;
+
+  /* margin: 0;
+  padding: 5px 0 5px 5px;
+  width: 350px;
+  background: #495057;
+  border: 0;
+  outline: none; */
+  
+  /* font-weight: bold; */
+}
+
+input, button{
+  background: none;
+  outline: none;
+  border: none;
+}
+.lnr-plus-circle:before {
+  content: "\e881";
+}
+
+.lnr {
+  font-family: Linearicons-Free;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content .todo-insert #todo-text::placeholder {
+    color: white;
+}
+
+.content .todo-insert #add {
+    background: #868e96;
+    flex: auto;
+    outline: none;
+    border: 0;
+    padding: 0;
+    width: 10%;
+}
+
+.content .todo-insert #add span.lnr {
+    font-weight: bold;
+}
