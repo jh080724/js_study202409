@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <a href="https://github.com" id="link">깃허브로 이동</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="https://github.com" id="link">깃허브로 이동</a>
 
-  <script>
-    const $link = document.getElementById('link');
-    $link.addEventListener('click', e => {
-      //confirm은 확인/취소 버튼으로 이루어진 알림창
-      // 확인을 누르면 true가, 취소를 누르면 false가 리턴된다.
+    <form name="myForm" action="https://www.google.com">
+      <input type="text" placeholder="이메일을 쓰세요" />
+      <button type="submit">확인</button>
+    </form>
 
-      if(!confirm('깃텁으로 이동하실라우 ?')){
-        e.preventDefault(); // 태그의 고유 기능을 죽이기.
-        // return;
-      }
+    <script>
+      const $link = document.getElementById("link");
+      $link.addEventListener("click", (e) => {
+        //confirm은 확인/취소 버튼으로 이루어진 알림창
+        // 확인을 누르면 true가, 취소를 누르면 false가 리턴된다.
 
-    })
-  </script>
-</body>
+        if (!confirm("깃텁으로 이동하실라우 ?")) {
+          e.preventDefault(); // 태그의 고유 기능을 죽이기.
+          // return;
+        }
+      });
+
+      //form에서는 button click 이벤트를 처리할 필요가 없다.
+      // 왜냐 form에서는 submit 이벤트를 제공해준다.
+      const $myForm = document.myForm; // form 객체는 document 객체의 하위 객체 중 하나로
+      // 유일하게 name 속성으로만 from 요소 접근이 가능함
+
+      //만약 form 내부의 입력 양식 유효성을 검증해야 한다먄
+      $myForm.addEventListener('submit', (e) => {
+
+        e.preventDefault();
+
+        if($myForm.firstElementChild.value === ''){
+          return;  // 유효성 검증
+        }
+
+        $myForm.submit(); // 문제 없으면 직접 submit
+
+      });
+
+    </script>
+  </body>
 </html>
