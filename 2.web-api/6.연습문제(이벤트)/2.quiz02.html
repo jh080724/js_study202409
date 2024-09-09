@@ -22,7 +22,7 @@
       //버튼을 클릭하면 div태그가 숨겨지도록
       //이벤트 핸들러를 구현하세요.
       //힌트) css의 display: none; 사용            XXXXXXXXXXXXXXx 이것도 실패 확인하셈 -> 확인함 34라인 )}; -> });로 수정.
-      //                                           안녕하세요. 텍스트 보이기 할때 나오도록 하셈.
+      //                                           안녕하세요. 텍스트 보이기 할때 나오도록 하셈. -> 확인함. 48~50라인 주석처리함. 클릭하면 안보이게 한 부분 주석처리함..
     
       const $btn = document.getElementById("hider");
       const $text = document.querySelector(".text");
@@ -36,7 +36,6 @@
         }
       }); 
 
-      // const flag = true;
       // $btn.addEventListener("click", () => {
       //   if ($text.hasAttribute("style")) {
       //     // $text.style.display = 'block';
@@ -46,9 +45,9 @@
       //   $text.style.display = "none";
       // });
 
-      $btn.addEventListener("click", () => {
-        $text.style.display = "none";
-      });
+      // $btn.addEventListener("click", () => {
+      //   $text.style.display = "none";
+      // });
     </script>
   </body>
 </html>
