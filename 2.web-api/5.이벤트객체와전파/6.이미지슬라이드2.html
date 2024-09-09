@@ -129,10 +129,11 @@
       });
 
       //이미지 썸네일 컨테이너에 클릭 이벤트 바인딩 ==> 아래 썸네일 이미지 출력하는 부분 없어졌음. 고쳐야 함. --> XXXXXX
-      updaetImage(ilConatiner.addEventListener("click", (e) => ){
+      $thumbnailContainer.addEventListener('click', (e) => {
+        if (!e.target.matches('.thumbnail')) return;
 
         const clickedIndex = e.target.dataset.index;
-        console.log(clickedIndex);
+        updateImage(clickedIndex);
       });
     </script>
   </body>
