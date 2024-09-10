@@ -138,10 +138,20 @@ button {
     flex-direction: row;
 }
 
+.content .todo-list .todo-list-item:nth-child(even) {
+  background: #f8f9fa;
+}
+
 .content .todo-list .todo-list-item label.checkbox {
+  margin-left: 10px;
     flex-grow: 1;
     /* border: 1px solid black; */
-    background: orange;
+    /* background: orange; */
+}
+
+section.todo-template .content .todo-list .todo-list-item .checkbox.checked {
+  color: #ADB5BD;
+  text-decoration: line-through;
 }
 
 .content .todo-list .todo-list-item .modify {
@@ -167,9 +177,15 @@ button {
 }
 
 .content .todo-list .todo-list-item label.checkbox input {
-  display: none;
+  /* display: none; */
+  vertical-align: center;
+  transform: scale(1.5);
 }
 
+.content .todo-list .todo-list-item label.checkbox .text {
+  margin-left: 10px;
+}
+/* 
 .content .todo-list .todo-list-item label.checkbox::before {
   margin-left: 10px;
   /* margin-right: 10px; */
@@ -181,7 +197,7 @@ button {
   border: 1px solid black;
   border-radius: 4px;
   vertical-align: middle;
-}
+} */
 
 .content .todo-list .todo-list-item label.checkbox span{
   vertical-align: middle;
