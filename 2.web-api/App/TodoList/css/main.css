@@ -1,9 +1,18 @@
+body {
+    background: #e9ecef;
+    display: flex;
+    justify-content: center;
+}
+
 .wrapper {
-  background: #e9ecef;
-  width: 400px;
-  padding-top: 64px;
-  height: 100vh;
-  /*
+    /* background: #e9ecef; */
+    /* width: 400px; */
+    flex-grow: 0;
+    flex-shrink: 1;
+    /* flex-wrap: wrap; */
+    padding-top: 64px;
+    height: 100vh;
+    /*
   border: 2px double #22b7ce;
   margin: 50px auto;
   border-radius: 8px;
@@ -11,61 +20,69 @@
 }
 
 section.todo-template {
-  background: tomato;
-  width: 512px;
-  border-radius: 5px;
-  margin: 0 auto;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    /* background: tomato; */
+    background: white;
+    width: 512px;
+    border-radius: 5px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 section.todo-template .app-title {
-  height: 64px;
-  font-size: 1.5em;
-  background: #22b8cf;
-  display: flex;
-  color: white;
-  justify-content: center;
-  align-items: center;
+    height: 64px;
+    font-size: 1.5em;
+    background: #22b8cf;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
 
-  /* font-weight: bold;
+    /* font-weight: bold;
     text-align: center;
     background: #22b7ce;
     padding: 20px; */
 }
 
 section.todo-template .content .todo-insert {
-  display: flex;
-  background: #495057;
+    display: flex;
+    background: #495057;
 }
 
 section.todo-template .content .todo-insert input {
-  /* flex: 1; */
-  flex-grow: 1;
-  padding: 8px;
-  font-size: 1.1em;
-  line-height: 1.5;
-  color: white;
-  width: 430px;
+    /* flex: 1; */
+    flex-grow: 1;
+    padding: 8px;
+    font-size: 1em;
+    line-height: 1.5;
+    color: white;
+    width: 430px;
 
-  /* margin: 0;
+    /* margin: 0;
   padding: 5px 0 5px 5px;
   background: #495057;
   border: 0;
   outline: none; */
 
-  /* font-weight: bold; */
+    /* font-weight: bold; */
 }
 
 section.todo-template .content .todo-insert button {
-  flex-shrink: 0;
+    flex-shrink: 0;
 }
 
 input,
 button {
-  background: none;
-  outline: none;
-  border: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+/* .lnr-plus-circle { */
+.lnr {
+    width: 100px;
+    color: white;
+    font-size: 22px;
 }
 
 /* .lnr-plus-circle:before {
@@ -84,31 +101,98 @@ button {
 } */
 
 .content .todo-insert #todo-text::placeholder {
-  color: white;
+    color: white;
 }
 
 .content .todo-insert #add {
-  background: #868e96;
-  flex: auto;
-  outline: none;
-  border: 0;
-  padding: 0;
-  width: 10%;
+    background: #868e96;
+    flex-grow: 0;
+    outline: none;
+    border: 0;
+    padding: 0;
+    width: 10%;
 }
 
 /* .content .todo-insert #add span.lnr {
   font-weight: bold;
 } */
 
-.contet .todo-list {
-  display: flex;
-  flex-direction: column;
+.content .todo-list {
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    align-content: center;
 }
 
 .content .todo-list .todo-list-item {
-  display: flex;
-  flex-direction: row;
+    border: 1px solid black; /* 완성 후 삭제해야함 */
+    /* padding: 20px 20px; */
+    /* align-items: center; */
+    height: 50px;
+    line-height: 50px;
+    font-size: 1em;
+    flex-grow: 0;
+
+    display: flex; /* label */
+    flex-direction: row;
 }
 
-li.todo-list-item {
+.content .todo-list .todo-list-item label.checkbox {
+    flex-grow: 1;
+    /* border: 1px solid black; */
+    background: orange;
 }
+
+.content .todo-list .todo-list-item .modify {
+    flex-grow: 0;
+    /* border: 1px solid black; */
+    background: rgb(224, 205, 255);
+    width: 10%;
+    text-align: center;
+
+}
+
+.content .todo-list .todo-list-item .remove {
+    flex-grow: 0;
+    /* border: 1px solid black; */
+    background: cyan;
+    width: 10%;
+    text-align: center;
+
+    outline: none;
+    border: 0;
+    padding: 0;
+   
+}
+
+.content .todo-list .todo-list-item label.checkbox input {
+  display: none;
+}
+
+.content .todo-list .todo-list-item label.checkbox::before {
+  margin-left: 10px;
+  /* margin-right: 10px; */
+  background: green;
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid black;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.content .todo-list .todo-list-item label.checkbox span{
+  vertical-align: middle;
+  padding-left: 5px;
+}
+
+.content .todo-list .todo-list-item label.checkbox input:checked {
+  content: 'v';
+}
+/* .lnr-corss-circle {
+  width: 100px;
+  color: white;
+  font-size: 22px;
+} */
