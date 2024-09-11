@@ -4,6 +4,13 @@ body {
     justify-content: center;
 }
 
+input,
+button {
+    background: none;
+    outline: none;
+    border: none;
+}
+
 .wrapper {
     /* background: #e9ecef; */
     /* width: 400px; */
@@ -46,7 +53,7 @@ section.todo-template .app-title {
 
 section.todo-template .content .todo-insert {
     display: flex;
-    background: #495057;
+    /* background: #495057; */
 }
 
 section.todo-template .content .todo-insert input {
@@ -57,7 +64,7 @@ section.todo-template .content .todo-insert input {
     line-height: 1.5;
     color: white;
     width: 430px;
-
+    background: #495057;
     /* margin: 0;
   padding: 5px 0 5px 5px;
   background: #495057;
@@ -69,20 +76,50 @@ section.todo-template .content .todo-insert input {
 
 section.todo-template .content .todo-insert button {
     flex-shrink: 0;
+    cursor: pointer;
+    background: green;
+    color: white;
+
+    flex-grow: 0;
+    outline: none;
+    border: 0;
+    padding: 0;
+    width: 10%;
 }
 
-input,
-button {
-    background: none;
-    outline: none;
-    border: none;
+section.todo-template .content .todo-insert button:hover {
+  /* background: #ADB5BD; */
+  background: yellowgreen;
 }
+
+/* ///////////////////
+#calculator button {
+  font: inherit;
+  background: #023d6d;
+  color: white;
+  border: 1px solid #023d6d;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#calculator button:focus {
+  outline: none;
+}
+
+#calculator button:hover,
+#calculator button:active {
+  background: #084f88;
+  border-color: #084f88;
+}
+//////////// */
+
 
 /* .lnr-plus-circle { */
 .lnr {
     width: 100px;
-    color: white;
+    /* color: white; */
     font-size: 22px;
+    cursor: pointer;
 }
 
 /* .lnr-plus-circle:before {
@@ -105,12 +142,12 @@ button {
 }
 
 .content .todo-insert #add {
-    background: #868e96;
-    flex-grow: 0;
+    /* background: #868e96; */
+    /* flex-grow: 0;
     outline: none;
     border: 0;
     padding: 0;
-    width: 10%;
+    width: 10%; */
 }
 
 /* .content .todo-insert #add span.lnr {
@@ -118,15 +155,16 @@ button {
 } */
 
 .content .todo-list {
-    height: 700px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     align-content: center;
+    overflow: auto;
 }
 
 .content .todo-list .todo-list-item {
-    border: 1px solid black; /* 완성 후 삭제해야함 */
+    /* border: 1px solid black; 완성 후 삭제해야함 */
     /* padding: 20px 20px; */
     /* align-items: center; */
     height: 50px;
@@ -157,22 +195,26 @@ section.todo-template .content .todo-list .todo-list-item .checkbox.checked {
 .content .todo-list .todo-list-item .modify {
     flex-grow: 0;
     /* border: 1px solid black; */
-    background: rgb(224, 205, 255);
-    width: 10%;
+    /* background: rgb(224, 205, 255); */
+    width: 5%;
     text-align: center;
+    color: green;
 
 }
 
 .content .todo-list .todo-list-item .remove {
     flex-grow: 0;
     /* border: 1px solid black; */
-    background: cyan;
+    /* background: cyan; */
     width: 10%;
     text-align: center;
 
     outline: none;
     border: 0;
     padding: 0;
+
+    color: red;
+
    
 }
 
