@@ -1,24 +1,6 @@
-// const $tmp=document.querySelector('.checkbox');
-// console.log($tmp);
+import handlerBinding from "./event-handler-binding.js";
 
-// const $submit = document.getElementById('add')
-// $submit.onmouseover = sayHelloHandler();
+// 자바 스크립트 진입점.
+// 우리는 이벤트 처리 함수 밖에 없자만, 이벤트를 제외한 전역 함수들이 올수 있는 공간.
 
-// function sayHelloHandler(){
-//   alert('Hello~~~');
-// }
-
-// const $b1 = document.querySelector('.lnr-plus-circle');
-// // $b1.onmouseover = sayHelloHandler;
-// $b1.onclick = () => {
-//   $b1.style.background = 'yellow';
-// }
-
-// const $b2 = document.getElementById('add');
-// $b2.onmouseover = () => {
-//   $b2.style.background = 'white';
-// } 
-
-// $b2.onmouseout = () => {
-//   $b2.style.background = '#868e96';
-// }
+handlerBinding();

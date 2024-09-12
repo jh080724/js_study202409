@@ -1,256 +1,166 @@
-body {
-    background: #e9ecef;
-    display: flex;
-    justify-content: center;
+a {
+  color: inherit;
 }
 
 input,
 button {
-    background: none;
-    outline: none;
-    border: none;
+  background: none;
+  outline: none;
+  border: none;
 }
-
 .wrapper {
-    /* background: #e9ecef; */
-    /* width: 400px; */
-    flex-grow: 0;
-    flex-shrink: 1;
-    /* flex-wrap: wrap; */
-    padding-top: 64px;
-    height: 100vh;
-    /*
-  border: 2px double #22b7ce;
-  margin: 50px auto;
-  border-radius: 8px;
-  */
+  background: #e9ecef;
+  padding-top: 64px;
+  height: 100vh;
 }
 
 section.todo-template {
-    /* background: tomato; */
-    background: white;
-    width: 512px;
-    border-radius: 5px;
-    margin: 0 auto;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  background: tomato;
+  margin: 0 auto;
+  width: 512px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 section.todo-template .app-title {
-    height: 64px;
-    font-size: 1.5em;
-    background: #22b8cf;
-    display: flex;
-    color: white;
-    justify-content: center;
-    align-items: center;
+  background: #22b8cf;
+  color: white;
+  height: 64px;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    /* font-weight: bold;
-    text-align: center;
-    background: #22b7ce;
-    padding: 20px; */
+section.todo-template .content {
+  background: white;
 }
 
 section.todo-template .content .todo-insert {
-    display: flex;
-    /* background: #495057; */
+  background: #495033;
+  display: flex;
 }
 
 section.todo-template .content .todo-insert input {
-    /* flex: 1; */
-    flex-grow: 1;
-    padding: 8px;
-    font-size: 1em;
-    line-height: 1.5;
-    color: white;
-    width: 430px;
-    background: #495057;
-    /* margin: 0;
-  padding: 5px 0 5px 5px;
-  background: #495057;
-  border: 0;
-  outline: none; */
+  /* background: gray;  테스트용*/
+  /* 다른 아이템은 사이즈 뺀 나머지공간 다 차지해라 */
+  flex: 1;
+  padding: 8px;
+  line-height: 1.5;
 
-    /* font-weight: bold; */
+  color: white; /* input에 작성되는 글씨 색깔 */
+}
+
+section.todo-template .content .todo-insert input::placeholder {
+  color: #deef33;
 }
 
 section.todo-template .content .todo-insert button {
-    flex-shrink: 0;
-    cursor: pointer;
-    background: green;
-    color: white;
-
-    flex-grow: 0;
-    outline: none;
-    border: 0;
-    padding: 0;
-    width: 10%;
+  background: #868968;
+  color: white;
+  padding: 0 16px;
+  font-size: 1.3em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 section.todo-template .content .todo-insert button:hover {
-  /* background: #ADB5BD; */
-  background: yellowgreen;
+  background: #760068;
 }
 
-/* ///////////////////
-#calculator button {
-  font: inherit;
-  background: #023d6d;
-  color: white;
-  border: 1px solid #023d6d;
-  padding: 1rem;
-  cursor: pointer;
+section.todo-template .content .todo-list {
+  min-height: 320px;
+  max-height: 520px;
+  overflow: auto; /* max-height를 넘으면 스크롤 지정: auto */
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  align-content: center;
 }
 
-#calculator button:focus {
-  outline: none;
+section.todo-template .content .todo-list .todo-list-item {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid black; 완성 후 삭제해야함 */
+  /* align-items: center; */
+  /* height: 50px;
+  line-height: 50px;
+  font-size: 1em;
+  flex-grow: 0;
+
+  flex-direction: row; */
 }
 
-#calculator button:hover,
-#calculator button:active {
-  background: #084f88;
-  border-color: #084f88;
-}
-//////////// */
-
-
-/* .lnr-plus-circle { */
-.lnr {
-    width: 100px;
-    /* color: white; */
-    font-size: 22px;
-    cursor: pointer;
+/* 짝수 번째는 다른 배경색 지정 */
+section.todo-template .content .todo-list .todo-list-item:nth-child(even) {
+  background: #f8f9fe;
 }
 
-/* .lnr-plus-circle:before {
-  content: "\e881";
+section.todo-template .content .todo-list .todo-list-item .checkbox {
+  /* background: tomato; */
+  flex: 1;
 }
 
-.lnr {
-  font-family: Linearicons-Free;
-  speak: none;
-  font-style: normal;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-} */
-
-.content .todo-insert #todo-text::placeholder {
-    color: white;
-}
-
-.content .todo-insert #add {
-    /* background: #868e96; */
-    /* flex-grow: 0;
-    outline: none;
-    border: 0;
-    padding: 0;
-    width: 10%; */
-}
-
-/* .content .todo-insert #add span.lnr {
-  font-weight: bold;
-} */
-
-.content .todo-list {
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    align-content: center;
-    overflow: auto;
-}
-
-.content .todo-list .todo-list-item {
-    /* border: 1px solid black; 완성 후 삭제해야함 */
-    /* padding: 20px 20px; */
-    /* align-items: center; */
-    height: 50px;
-    line-height: 50px;
-    font-size: 1em;
-    flex-grow: 0;
-
-    display: flex; /* label */
-    flex-direction: row;
-}
-
-.content .todo-list .todo-list-item:nth-child(even) {
-  background: #f8f9fa;
-}
-
-.content .todo-list .todo-list-item label.checkbox {
-  margin-left: 10px;
-    flex-grow: 1;
-    /* border: 1px solid black; */
-    /* background: orange; */
-}
-
-section.todo-template .content .todo-list .todo-list-item .checkbox.checked {
-  color: #ADB5BD;
-  text-decoration: line-through;
-}
-
-.content .todo-list .todo-list-item .modify {
-    flex-grow: 0;
-    /* border: 1px solid black; */
-    /* background: rgb(224, 205, 255); */
-    width: 5%;
-    text-align: center;
-    color: green;
-
-}
-
-.content .todo-list .todo-list-item .remove {
-    flex-grow: 0;
-    /* border: 1px solid black; */
-    /* background: cyan; */
-    width: 10%;
-    text-align: center;
-
-    outline: none;
-    border: 0;
-    padding: 0;
-
-    color: red;
-
-   
-}
-
-.content .todo-list .todo-list-item label.checkbox input {
-  /* display: none; */
-  vertical-align: center;
+section.todo-template .content .todo-list .todo-list-item .checkbox input {
   transform: scale(1.5);
 }
 
-.content .todo-list .todo-list-item label.checkbox .text {
+section.todo-template .content .todo-list .todo-list-item .checkbox .text {
   margin-left: 10px;
 }
-/* 
-.content .todo-list .todo-list-item label.checkbox::before {
-  margin-left: 10px;
-  /* margin-right: 10px; */
-  background: green;
-  content: '';
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border: 1px solid black;
-  border-radius: 4px;
-  vertical-align: middle;
-} */
 
-.content .todo-list .todo-list-item label.checkbox span{
-  vertical-align: middle;
-  padding-left: 5px;
+section.todo-template
+  .content
+  .todo-list
+  .todo-list-item
+  .checkbox
+  .modify-input {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-left: 64px;
+  padding: 5px;
+  box-sizing: border-box; /* 박스사이즈가 커지지 않기을 원함.*/
+  width: 200px;
 }
 
-.content .todo-list .todo-list-item label.checkbox input:checked {
-  content: 'v';
+section.todo-template .content .todo-list .todo-list-item .checkbox .checked {
+  text-decoration: line-through;
+  color: #abd5bd;
 }
-/* .lnr-corss-circle {
-  width: 100px;
-  color: white;
-  font-size: 22px;
-} */
+section.todo-template .content .todo-list .todo-list-item div {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+section.todo-template .content .todo-list .todo-list-item .modify {
+  color: green;
+  margin-right: 10px;
+}
+
+section.todo-template .content .todo-list .todo-list-item .remove {
+  color: red;
+  /* margin-left: 10px; */
+}
+
+/* 삭제 모션 */
+.delMoving {
+  animation: delMove 1.5s ease-in-out;
+}
+@keyframes delMove {
+  0% {
+    background: orange;
+    transform: translateX(20px);
+  }
+  50% {
+    background: orangered;
+    transform: translateX(-500px);
+  }
+  100% {
+    background: red;
+    transform: translateX(-2000px);
+  }
+}
